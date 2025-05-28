@@ -102,10 +102,12 @@ Place your completed `print.sh` in `solutions/` and commit. Then link it here:
 
 #### Reflection Questions
 
-1. **What is the difference between `printf` and `echo` in Bash?**
+1. **What is the difference between `printf` and `echo` in Bash?**        
+With echo you can output text directly, with printf you can additionally format the text with bsp /n
 2. **What is the role of `~/.bashrc` in your shell environment?**
+This is a startup script for Bash sessions that is loaded when the terminal opens. It can be used to define environment variables, for example.
 3. **Explain the difference between sourcing (`source ~/.bashrc`) and executing (`./print.sh`).**
-
+With source, the content is inserted into the running shell and print.sh starts its own shell.
 ---
 
 ### Task 2: GAS Printing (32‑bit Linux)
@@ -160,9 +162,11 @@ _start:
 #### Reflection Questions
 
 1. **What is a file descriptor and how does the OS use it?**
+This is a number that the operating system assigns to a file or record when it is opened to identify it.
 2. **How can you obtain or duplicate a file descriptor for another resource (e.g., a file or socket)?**
+When a socket or file is opened with system calls such as open() or socket(), or when copying with dup() or dup2().
 3. **What might happen if you use an invalid file descriptor in a syscall?**
-
+It returns an error.
 ---
 
 ### Task 3: C Printing
@@ -200,6 +204,7 @@ int main(void) {
 #### Reflection Questions
 
 1. **Use `objdump -d` on `print_c` to find the assembly instructions corresponding to your `printf` calls.**
+When working with printf() calls a function from the C standard library.
 2. **Why is the syntax written differently from GAS assembly? Compare NASM vs. GAS notation.**
 3. **How could you use `fprintf` to write output both to `stdout` and to a file instead? Provide example code.**
 
@@ -242,8 +247,9 @@ if __name__ == "__main__":
 #### Reflection Questions
 
 1. **Is Python’s print behavior closer to Bash, Assembly, or C? Explain.**
+The behavior is close to bash, near to mashine code.
 2. **Can you inspect a Python script’s binary with `objdump`? Why or why not?**
-
+No.
 ---
 
 **Remember:** Stop working after **90 minutes** and document where you stopped.
